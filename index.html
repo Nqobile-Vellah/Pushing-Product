@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="shortcut icon" href="logo.png" type="image/x-icon">
   <title>Pushing Product</title>
   <style>
@@ -26,13 +27,14 @@
   z-index: 2;
   top: 0;
   left: -250px;
-  background-color: #f0f0f0;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
   text-align: left;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.8); 
+  backdrop-filter: blur(10px); 
 }
 
 .sidenav a {
@@ -117,6 +119,46 @@ body.sidebar-open #overlay {
 body.sidebar-open {
   overflow: hidden;
 }
+
+.user-welcome p {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+
+    .user-welcome p a {
+      text-decoration: none;
+      color: #000;
+      margin-left: -15px;
+      display: inline-block;
+    }
+
+    .user-welcome p a:hover {
+      text-decoration: underline; /* Add underline when hovered */
+      background-color: transparent;
+    }
+
+    .location {
+      margin-left: 20px;
+    }
+
+    .social-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .social-icons a{
+      margin-top: 70px;
+    }
+
+    .location{
+      margin-top: 20px;
+    }
+
+    .location select{
+      width: 150px;
+      height: 20px;
+    }
 /*Sidebar styles end*/  
 
 /*Search icon styles*/
@@ -185,6 +227,7 @@ body.sidebar-open {
       position: absolute;
       left: 700px;
       background-color: transparent;
+      cursor: pointer;
     } 
     .sales-info {
       background-color: #f2f2f2;
@@ -234,13 +277,21 @@ body.sidebar-open {
       color: #000;
       margin: 0 10px;
       text-decoration: none;
+      cursor: pointer;
     }
     
     .navbar-logo img {
       height: 10px;
       cursor: pointer;
     }
+
     
+    .social-icons a:hover {
+      transform: scale(1.2); /* Increase the size on hover */
+      transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+        
     @media screen and (max-width: 768px) {
       .navbar {
         flex-wrap: wrap;
@@ -335,7 +386,7 @@ body.sidebar-open {
     padding: 5% 10%;
   }
 
-    .intro {
+  .intro {
     margin-top: 40px;
     margin-bottom: 50px;
     background-color: #f5f5f5;
@@ -343,27 +394,20 @@ body.sidebar-open {
     border-radius: 25px;
     width: 1470px;
     margin-left: 30px;
+    text-align: center;
   }
 
 .intro h2 {
-  text-align: center;
-  left: 300px;
   font-size: 28px;
+  border-bottom: 2px #ccc solid;
+  border-radius: 2px;
   margin: 5px;  
   position: relative;
   display: inline-block;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.intro h2.underline-animation::after {
+.intro h2::after {
   transform: scaleX(1);
-}
-
-.intro h2.scroll-appear {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .intro h2::after {
@@ -379,10 +423,6 @@ body.sidebar-open {
   transition: transform 0.5s ease-in-out;
 }
 
-.intro h2.underline-animation::after {
-  transform: scaleX(1);
-}
-
 .intro p{
   text-align: center;
   font-size: 16px;
@@ -390,19 +430,20 @@ body.sidebar-open {
   padding: 10px 100px;
 }
 
-.chevrons {
+.intro .chevrons {
   position: absolute;
   top: 84rem;
   right: 45px;
   margin: 10px;
   font-size: 24px;
+  margin-top: 50px;
   color: #000;
   cursor: pointer;
   text-decoration: none;
   display: flex;
 }
 
-.chevron-circle {
+.intro .chevron-circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -413,24 +454,24 @@ body.sidebar-open {
   transition: background-color 0.3s;
 }
 
-.chevrons .chevron-circle:first-child {
+.intro .chevrons .chevron-circle:first-child {
   margin-right: 10px;
 }
 
-.chevrons .chevron-circle:last-child {
+.intro .chevrons .chevron-circle:last-child {
   margin-left: 10px;
 }
 
-.chevrons .chevron-circle:hover {
+.intro .chevrons .chevron-circle:hover {
   background-color: #ddd;
 }
 
-.chevrons i {
+.intro .chevrons i {
   margin: 0;
   padding: 0;
 }
 
-.chevrons:hover .chevron-circle:not(:hover) {
+.intro .chevrons:hover .chevron-circle:not(:hover) {
   background-color: #5a5a5a;
 }
 
@@ -438,13 +479,17 @@ body.sidebar-open {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
+}
+
+.product-items h4{
+  font-weight: bold;
+  text-align: center;
+  padding: 20px; 
   cursor: pointer;
 }
 
-.product-items p{
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
+.product-items h4:hover{
+  color: #777;
 }
 
 .product-container {
@@ -456,6 +501,7 @@ body.sidebar-open {
   max-width: 300px;
   height: 350px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
   .categories-container {
@@ -469,6 +515,7 @@ body.sidebar-open {
     background-color: #f5f5f5;
     padding: 80px 0;
     border-radius: 25px;
+    margin-top: 50px;
   }
 
   .category-card i {
@@ -488,6 +535,7 @@ body.sidebar-open {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
   }
+  
   .category-card {
   position: relative;
   width: 300px;
@@ -499,28 +547,230 @@ body.sidebar-open {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+  .star-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.star-list li {
+  margin-right: -10px; 
+  padding-left: 15px;
+  cursor: pointer;
+}
+
+.star-list li:last-child {
+  margin-right: 0;
+}
+
+.star-list li a {
+  text-decoration: none;
+  color: #777;
+}
+
+.star-list p {
+  padding-left: 15px;
+}
+
+.reviews p{
+  padding-left: 150px;
+}
+
+.additional-feature {
+  padding: 20px;
+}
+
+.features-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.features-list li {
+  text-align: center;
+}
+
+.features-list img {
+  max-width: 80px;
+  margin-bottom: 0px;
+  background-color: #fff;
+
+}
+
+.features-list p {
+  margin: 10px;
+  font-weight: bold;
+}
+
+/* Additional styling for the "Recently Browsed Products" section */
+.recently-browsed {
+  padding: 40px;
+  background-color: #f2f2f2;
+}
+
+.recently-browsed h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.product-card {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
- footer {
+.product-card img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #5a5a5a;
+  margin-bottom: 15px;
+}
+
+.product-card .btn {
+  display: inline-block;
+  padding: 5px 20px;
+  font-size: 14px;
+  background-color: #ac9362;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.product-card .btn:hover {
+  background-color: #917548;
+}
+
+.discount-offer {
+  max-width: 1450px;
+  background-color: rgb(245,245,245);
+  padding: 60px 50px;
+  text-align: left;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.offer-container {
+  margin: 0 50px;
+  display: flex;
+  width: 1700px;
+}
+
+.offer-content {
+  flex: 1;
+}
+
+.offer-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.offer-text {
+  font-size: 18px;
+  color: #5a5a5a;
+  margin-bottom: 30px;
+}
+
+.offer-image {
+  flex: 1;
+  text-align: center;
+}
+
+.offer-image img {
+  max-width: 100%;
+}    
+    
+    .subscribe-form input[type="email"] {
+      flex: 1;
+      padding: 8px 10px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      outline: none;
+    }
+    
+
+
+.subscribe-form {
+    display: flex;
+    align-items: center;
+    max-width: 500px;
+    margin-top: 20px; 
+    font-size: 18px;
+  }
+
+  .subscribe-form button[type="submit"] {
+    padding: 12px 24px;
+    background-color: #5a5a5a;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    height: 50px;
+    width: 190px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+  }
+
+  .subscribe-form button[type="submit"]:hover {
+    background-color: #ddd;
+  }
+
+  .subscribe-form button[type="submit"]:focus {
+    outline: none;
+  }
+/* footer styles */
+footer {
       position: relative;
-      margin-top: 250px;
+      margin-top: 50px;
       width: 100%;
       padding: 50px 15%;
       background: #f2f2f2;
       color: #0e0e0e;
-      border-radius: 25px;
+      border-radius: 25px 25px 0 0;
     }
     
     footer .container {
       position: relative;
-      padding-bottom: -10px;
+      height: -100px;
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      max-width: 1200px; 
-      margin: 0 -100px; 
+      max-width: 1200px;
+      margin: 0 -100px;
     }
     
     footer .footer-col {
@@ -556,24 +806,123 @@ body.sidebar-open {
       color: #000;
       transition: color 0.3s ease;
     }
-
-    footer .social-links a i:hover  {
+    
+    footer .social-links a i:hover {
       color: #5a5a5a;
     }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      text-decoration: none;
+      color: #000;
+    }
+    
+    .social-links a i {
+      margin-right: 5px;
+    }
+    
+    .social-links a:hover {
+      color: #5a5a5a;
+    }
+    
+    footer .social-links a i:hover {
+      color: #5a5a5a;
+    }
+    
 
-   .copyright {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-    font-size: 12px;
-   }
-
+    .footer-bottom {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+    }
+    
+    .footer-bottom p {
+      margin-bottom: 0;
+      font-size: 12px;
+      margin-left: 400px;
+    }
+    
     @media (max-width: 767px) {
       footer .footer-col {
         flex: 1 0 50%;
         max-width: 50%;
+      }
+    }   
+    
+    .footer-col h6 a{
+      text-decoration: underline;
+      color: #000;
+    }
+
+    .footer-col p{
+      color: #000;
+      font-size: 16px;
+    }
+
+    #help-button,
+    #accessibility-button {
+      position: fixed;
+      bottom: 20px;
+      background-color: #000; /* You can change the background color */
+      color: #fff; /* You can change the icon color */
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    #help-button {
+      right: 80px; /* Adjust the right value to position the button */
+    }
+
+    #accessibility-button {
+      right: 20px;
+    }
+
+    .button-text {
+      display: none;
+      position: absolute;
+      top: -40%; /* Vertically center the text */
+      left: 50%; /* Horizontally center the text */
+      transform: translate(-50%, -50%); /* Center the text precisely */
+      padding: 8px 16px;
+      background-color: #000; /* Background color for the text */
+      color: #fff; /* Text color */
+      border-radius: 70px;
+      font-size: 9px;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    #help-button:hover,
+    #accessibility-button:hover {
+      background-color: #868686ad; /* Adjust the opacity on hover */
+    }
+
+    #help-button:hover .help-button-text,
+    #accessibility-button:hover .accessibility-button-text {
+      display: block;
+      animation: fadeIn 0.5s forwards; 
+      background-color: #777; 
+;
+    }
+
+    /* Define the fade-out animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
       }
     }
   </style>
@@ -586,18 +935,37 @@ body.sidebar-open {
     </section>
 </header>
 <div id="overlay" onclick="closeNav()"></div>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <div class="logo">
-    <img src="logo.png" alt="Logo">
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+    </div>
+    <div class="user-welcome">
+      <p>Welcome,<a href="#">Paul</a></p>
+    </div>
+    <a href="#">Shop All</a>
+    <a href="#">Latest</a>
+    <a href="#">Your Cart</a>
+    <a href="#">Wishlist</a>
+    <a href="#">About</a>  
+    <a href="#">Support</a>
+    <a href="#">Log out</a>
+
+    <div class="location">
+      <select id="shippingLocation">
+        <option value="" disabled selected>Shipping to :</option>
+        <option value="bw">Botswana</option>
+        <option value="us">India</option>
+        <option value="global">Global</option>
+      </select>
+    </div>
+
+    <div class="social-icons">
+      <a href="#" class="navbar-icon"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="navbar-icon"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="navbar-icon"><i class="fab fa-instagram"></i></a>
+    </div>
   </div>
-  <a href="#">Shop All</a>
-  <a href="#">Latest</a>
-  <a href="#">Your Cart</a>
-  <a href="#">Wishlist</a>
-  <a href="#">About</a>  
-  <a href="#">Support</a> 
-  <a href="#">Subscribe</a>
 </div>
 
 <span class="nav-toggle" onclick="openNav()"><i class="fas fa-bars"></i></span>
@@ -609,38 +977,44 @@ body.sidebar-open {
     <input type="text" id="searchBar" placeholder="What are you looking for?" class="search-bar">
 </div>
 <div class="navbar-right">
+  <a href="#" class="navbar-icon"><i class="far fa-user"></i></a>
   <a href="#" class="navbar-icon"><i class="fa-solid fa-cart-shopping"></i></a>
   <a href="#" class="navbar-icon"><i class="fa-regular fa-bell"></i></a>
   <a href="#" class="navbar-icon"><i class="far fa-heart"></i></a>
-  <a href="#" class="navbar-icon"><i class="far fa-user"></i></a>
   <a href="#" class="navbar-icon">EN</a>
 </div>
 </nav>
   
-  <section class="hero">
-    <img src="image7.jpg" alt="">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Plastic Furniture Sale: 30% Off!</h1>
-          <a href="#" class="btn">Shop furniture</a>
-        </div>
-      </div>
-  </section> 
+<section class="hero">
+  <img src="image7.jpg" alt="">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Plastic Furniture Sale: 30% Off!</h1>
+      <a href="#" class="btn">Shop furniture</a>
+    </div>
+  </div>
+  <div class="carousel-arrow left" onclick="scrollCarousel(-1)">&#8249;</div>
+  <div class="carousel-arrow right" onclick="scrollCarousel(1)">&#8250;</div>
+</section>
+
   <section class="intro">
-    <h2 class="scroll-appear underline-animation">Start Thriving with Pushing Product.</h2>
+    <h2>Start Thriving with Pushing Product</h2>
     <p>Experience Excellence with Pushing Product: Your One-Stop Shop for Indian products.</p>
     <div class="product-items">
       <div class="product-container">
         <img src="product1.jpg" alt="">
-        <p>Natural Wood Leg Plastic Dining Chair</p>
+        <h4>Natural Wood Leg Plastic Dining Chair</h4>
+        <p>BWP 249.95</p>
       </div>
       <div class="product-container">
         <img src="product2.jpg" alt="">
-        <p>Sleek Shine 3 Drawer Night Stand</p>
+        <h4>Sleek Shine 3 Drawer Night Stand</h4>
+        <p>BWP 399.95</p>
       </div>
       <div class="product-container">
         <img src="product3.jpg" alt="">
-        <p>Wood Legged Lucky Chair</p>
+        <h4>Wood Legged Lucky Chair</h4>
+        <p>BWP 249.95</p>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -653,6 +1027,223 @@ body.sidebar-open {
     </div>
   </section>
 
+  <div class="additional-feature">
+    <ul class="features-list">
+      <li>
+        <img src="feature1.jpg" alt="Free Shipping">
+        <p>Secure Online Payments</p>
+      </li>
+      <li>
+        <img src="feature2.jpg" alt="Customer Support">
+        <p>100% Satisfaction Guarantee</p>
+      </li>
+      <li>
+        <img src="feature3.jpg" alt="Easy Returns">
+        <p>30 Day Money Back</p>
+      </li>
+      <li>
+        <img src="feature4.jpg" alt="Easy Returns">
+        <p>Easy Returns and Refunds</p>
+      </li>
+    </ul>
+  </div>  
+  
+  <section class="intro">
+    <h2>Shop Furniture</h2>
+    <p>Elevate Your Home: Discover Authentic Indian Furniture.</p>
+    <div class="product-items">
+      <div class="product-container">
+        <img src="product1.jpg" alt="">
+        <h4>Natural Wood Leg Plastic Dining Chair</h4>
+        <p>BWP 249.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product2.jpg" alt="">
+        <h4>Sleek Shine 3 Drawer Night Stand</h4>
+        <p>BWP 399.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product3.jpg" alt="">
+        <h4>Wood Legged Lucky Chair</h4>
+        <p>BWP 249.95</p>
+      </div>
+      <div class="chevrons">
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Shop Pharmaceuticals</h2>
+    <p>Embrace Wellness: Discover Indian Pharmaceuticals.</p>
+    <div class="product-items">
+      <div class="product-container">
+        <img src="product4.jpg" alt="">
+        <h4>Tulsi Aswagandha Tea</h4>
+        <p>BWP 149.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product5.jpg" alt="">
+        <h4>Tulsi Ginger 100g Tin</h4>
+        <p>BWP 249.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product6.jpg" alt="">
+        <h4>Organic Golden Milk Super Blend</h4>
+        <p>BWP 99.95</p>
+      </div>
+      <div class="chevrons">
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Shop Stationery</h2>
+    <p>Discover Stationery: Write Your Story with Our Stationery.</p>
+    <div class="product-items">
+      <div class="product-container">
+        <img src="product7.jpg" alt="">
+        <h4>BIC 24 Coloring Pencils</h4>
+        <p>BWP 49.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product8.jpg" alt="">
+        <h4>Faber-Castell 15 Colour EcoPencils</h4>
+        <p>BWP 76.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product9.jpg" alt="">
+        <h4>Wooden Desktop Stationery Organizer</h4>
+        <p>BWP 199.95</p>
+      </div>
+      <div class="chevrons">
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Shop Electricals</h2>
+    <p>Discover Electricals: Power Up Your World with Reliable Wires and Cables.</p>
+    <div class="product-items">
+      <div class="product-container">
+        <img src="product10.jpg" alt="">
+        <h4>Twin and Earth Flat Cable 100m</h4>
+        <p>BWP 699.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product11.jpg" alt="">
+        <h4>Ryobi - 1kg Mig Wire D100 - 1.0mm</h4>
+        <p>BWP 119.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product12.jpg" alt="">
+        <h4>Charge Cable for Type C Devices</h4>
+        <p>BWP 74.95</p>
+      </div>
+      <div class="chevrons">
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Shop Uniform Garments</h2>
+    <p>Discover Uniform: Dress Your Best with Our Uniform Garments.</p>
+    <div class="product-items">
+      <div class="product-container">
+        <img src="product13.jpg" alt="">
+        <h4>Housekeeping Uniform - Sky & White</h4>
+        <p>BWP 349.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product14.jpg" alt="">
+        <h4>Javlin - Chef Trouser - Black</h4>
+        <p>BWP 229.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product15.jpg" alt="">
+        <h4>Barron Budget Poly Cotton Conti Suit</h4>
+        <p>BWP 359.95</p>
+      </div>
+      <div class="chevrons">
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <section class="intro">
+    <h2>Shop Steel</h2>
+    <p>Discover Stationery: Write Your Story with Our Stationery.</p>
+    <div class="product-items">
+      <div class="product-container">
+        <img src="product16.jpg" alt="">
+        <h4>Stainless Steel Chainmail Scrubber</h4>
+        <p>BWP 199.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product17.jpg" alt="">
+        <h4>Steel Baton - Large</h4>
+        <p>BWP 125.95</p>
+      </div>
+      <div class="product-container">
+        <img src="product18.jpg" alt="">
+        <h4>Steel Side Table</h4>
+        <p>BWP 249.95</p>
+      </div>
+      <div class="chevrons">
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="chevron-circle">
+          <i class="fas fa-chevron-right"></i>
+        </div>
+      </div> 
+    </div>
+  </section>
+
+  <section class="discount-offer">
+    <div class="offer-container">
+      <div class="offer-content">
+        <h2>Get 15% Off!</h2>
+        <p class="offer-text">Psst! We've got a special treat for all our valued customers. Sign up for our exclusive newsletter and unlock a great 15% discount on your very first purchase! </p>
+        <form class="subscribe-form" action="#" method="POST">
+          <input type="email" name="email" placeholder="Enter your email" required>
+          <button type="submit">Subscribe Now</button>
+        </form>
+      </div>
+      <div class="offer-image">
+        <img src="aesthetic.jpg" alt="Aesthetic Image">
+      </div>
+    </div>
+  </section>
+  
   <section class="categories">
     <div class="categories-container">
       <h2>Explore Our Categories</h2>
@@ -699,12 +1290,14 @@ body.sidebar-open {
   
   <span class="nav-toggle" onclick="openNav()"><i class="fas fa-bars"></i></span>
 
+
   <script>
+    //Sidebar Navigation
   function openNav() {
     document.getElementById("mySidenav").style.left = "0";
     document.getElementsByClassName("nav-toggle")[0].style.zIndex = "-1";
   }
-  
+
   function closeNav() {
     document.getElementById("mySidenav").style.left = "-250px";
     document.getElementsByClassName("nav-toggle")[0].style.zIndex = "3";
@@ -720,6 +1313,7 @@ function closeNav() {
   document.body.classList.remove("sidebar-open");
 }
 
+//Search icon
 const searchIcon = document.querySelector(".search-icon");
     const searchBar = document.getElementById("searchBar");
 
@@ -733,48 +1327,55 @@ const searchIcon = document.querySelector(".search-icon");
     });
   </script>
 </body>
-  <footer>
-    <div class="container">
-      <div class="footer-col">
-        <h4>company</h4>
-        <ul>
-          <li><a href="#">about us</a></li>
-          <li><a href="#">our services</a></li>
-          <li><a href="#">privacy policy</a></li>
-          <li><a href="#">affiliate program</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>get help</h4>
-        <ul>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">shipping</a></li>
-          <li><a href="#">returns</a></li>
-          <li><a href="#">order status</a></li>
-          <li><a href="#">payment options</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>online shop</h4>
-        <ul>
-          <li><a href="#">pharmaceuticals</a></li>
-          <li><a href="#">uniform garments</a></li>
-          <li><a href="#">stationery</a></li>
-          <li><a href="#">household appliances</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>follow us</h4>
-        <div class="social-links">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      <p class="copyright">
-        &copy; 2023 Pushing Product. All Rights Reserved.
-      </p>
+<footer>
+  <button id="help-button" aria-label="Help">
+    <span class="button-text help-button-text">Help</span>
+    <i class="material-icons">contact_support</i>
+  </button>
+  <button id="accessibility-button" aria-label="Accessibility">
+    <span class="button-text accessibility-button-text">Accessibility</span>
+    <i class="material-icons">accessibility</i>
+  </button>
+  <div class="container">
+    <div class="footer-col">
+      <h4>About Us</h4>
+      <ul>
+        <li><a href="#">Company</a></li>
+        <li><a href="#">Team</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
     </div>
-  </footer>
+    <div class="footer-col">
+      <h4>Customer Support</h4>
+      <ul>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Shipping &amp; Returns</a></li>
+        <li><a href="#">Order Tracking</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect with Us</h4>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
+        <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
+        <a href="#"><i class="fa-solid fa-at"></i>Email</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Subscribe to Our Newsletter</h4>
+      <p>Subscribe to our newsletter to receive the latest news and updates.</p>
+      <form class="subscribe-form" action="#" method="POST">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <h6>I have read and agree to Pushing Product's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</h6>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2023 Pushing Product. All rights reserved.</p>
+  </div>
+</footer>
 </html>
