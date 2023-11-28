@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="logo1.png" type="image/x-icon">
   <title>Pushing Product</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
@@ -20,149 +20,192 @@
     }
 
 /*Sidebar Styles*/
-  .sidenav {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  left: -250px;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  text-align: left;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: rgba(255, 255, 255, 0.8); 
-  backdrop-filter: blur(10px); 
-}
-
-.sidenav a {
-  display: block;
-  padding: 15px 20px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #333;
-  transition: 0.3s;
-}
-
-.sidenav a:hover{
-  background-color: #e6e6e6;
-  color: #000;
-}
-
-.sidenav .closebtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  padding: 10px;
-  color: #333;
-  transition: 0.3s;
-}
-
-.sidenav .closebtn:hover {
-  color: #000;
-}
-
-.logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.logo img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.nav-toggle {
-  position: absolute;
-  top: 78px;
-  left: 25px;
-  font-size: 24px;
-  color: #333;
-  cursor: pointer;
-  z-index: 1;
-  transition: 0.3s;
-}
-
-.nav-toggle.active {
-  z-index: 2; 
-}
-
-.nav-toggle:hover {
-  color: #000;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1;
-  display: none;
-}
-
-body.sidebar-open #overlay {
-  display: block;
-}
-
-body.sidebar-open {
-  overflow: hidden;
-}
-
-.user-welcome p {
-      display: flex;
-      align-items: center;
-      margin-left: 20px;
+    .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: -250px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: left;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(10px); 
     }
 
-    .user-welcome p a {
+    .sidenav a {
+      display: block;
+      padding: 15px 20px;
       text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      transition: 0.3s;
+    }
+.sidenav a::before:hover
+    .sidenav a:hover{
+      background-color: #e6e6e6;
       color: #000;
-      margin-left: -15px;
-      display: inline-block;
     }
 
-    .user-welcome p a:hover {
-      text-decoration: underline; /* Add underline when hovered */
-      background-color: transparent;
-    }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    padding: 10px;
+    color: #333;
+    transition: 0.3s;
+  }
 
-    .location {
-      margin-left: 20px;
-    }
+  .sidenav .closebtn:hover {
+    color: #000;
+  }
 
-    .social-icons {
+  .nav-toggle {
+    position: absolute;
+    top: 78px;
+    left: 25px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.3s;
+  }
+
+  .nav-toggle.active {
+    z-index: 2; 
+  }
+
+  .nav-toggle:hover {
+    color: #000;
+  }
+
+  /* Common styles for all screens */
+/* ... (existing styles) ... */
+
+/* Media query for screens less than 768px */
+@media screen and (max-width: 768px) {
+  .sidenav {
+    width: 100%; /* Occupy full width */
+    left: 0;
+  }
+
+  .nav-toggle {
+    left: 20px; /* Adjust the position */
+  }
+
+  .sidenav a::before,
+  .sidenav a:hover {
+    background-color: #e6e6e6;
+    color: #000;
+  }
+
+  .nav-toggle.active {
+    z-index: 2;
+  }
+
+  .nav-toggle {
+    top: 10px; /* Adjust the position */
+  }
+}
+
+/* Media query for screens more than 768px */
+@media screen and (min-width: 769px) {
+  .sidenav {
+    width: 250px; /* Restore original width */
+    left: -250px;
+  }
+
+  .nav-toggle {
+    left: 25px; /* Restore original position */
+    top: 78px; /* Restore original position */
+  }
+}
+
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+  }
+
+  body.sidebar-open #overlay {
+    display: block;
+  }
+
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  .user-welcome p {
       display: flex;
       align-items: center;
-    }
+      margin-left: 20px;
+  }
 
-    .social-icons a{
-      margin-top: 70px;
-    }
+  .user-welcome p a {
+    text-decoration: none;
+    color: #000;
+    margin-left: -15px;
+    display: inline-block;
+  }
 
-    .location{
-      margin-top: 20px;
-    }
+  .user-welcome p a:hover {
+    text-decoration: underline; /* Add underline when hovered */
+    background-color: transparent;
+  }
 
-    .location select{
-      width: 150px;
-      height: 20px;
-    }
+  .location {
+    margin-left: 20px;
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .social-icons a{
+    margin-top: 70px;
+  }
+
+  .location{
+    margin-top: 20px;
+  }
+
+  .location select{
+    width: 150px;
+    height: 20px;
+  }
+
+  .other-links{
+  position: static;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: transparent;
+}
+
+.other-links a{
+	  text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
+
+.other-links a:hover{
+	text-decoration: underline;
+}
 /*Sidebar styles end*/  
 
 /*Search icon styles*/
-.search-icon {
+  .search-icon {
     position: absolute;
     top: 6rem;
     left: 60px;
@@ -199,19 +242,20 @@ body.sidebar-open {
 
   /*Search icon styles ends*/
 
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      margin-top: 500px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-    }
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 
-    .container h1{
-      margin-right: 100px;
-    }
-    header {
+  .container h1{
+    margin-right: 100px;
+  }
+  
+  header {
     color: #fff;
     padding: 20px;
     display: flex;
@@ -221,77 +265,97 @@ body.sidebar-open {
     position: relative;
     z-index: 1;
   }
-    header img {
-      margin-top: 110px;
-      width: 70px;
-      position: absolute;
-      left: 700px;
-      background-color: transparent;
-      cursor: pointer;
-    } 
-    .sales-info {
-      background-color: #f2f2f2;
-      color: #5A5A5A;
-      text-align: center;
-      padding: 10px 600px;
-      border-radius: 20px;
-      text-align: center;
-      margin: 80px auto;
-      max-width: 1500px;
-      margin-top: 30px;
-      height: 30px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
 
-    .sales-info p {
-      margin-top: 15px;
-      font-size: small;
-      text-align: center;
-    }
-    
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #fff;
-      padding: 10px;
-      margin-top: -50px;
-    }
-    
-    .navbar-left {
-      display: flex;
-      align-items: center;
-      padding-left: 40px;
-    }
-    
-    .navbar-right {
-      display: flex;
-      align-items: center;
-      padding-right: 30px;
-    }
-    
-    .navbar-icon {
-      font-size: 20px;
-      color: #000;
-      margin: 0 10px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    
-    .navbar-logo img {
-      height: 10px;
-      cursor: pointer;
-    }
+  header img {
+    margin-top: 110px;
+    width: 80px;
+    position: absolute;
+    left: 700px;
+    background-color: transparent;
+    cursor: pointer;
+  } 
 
-    
-    .social-icons a:hover {
-      transform: scale(1.2); /* Increase the size on hover */
-      transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
-}
+  .sales-info {
+    background-color: #f2f2f2;
+    color: #5A5A5A;
+    text-align: center;
+    padding: 10px 600px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 80px auto;
+    max-width: 1500px;
+    margin-top: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+  }
 
-        
+  .sales-info p {
+    margin-top: 15px;
+    font-size: small;
+    text-align: center;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    margin-top: -50px;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    padding-right: 30px;
+  }
+  
+  .navbar-icon {
+    font-size: 20px;
+    color: #000;
+    margin: 0 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .navbar-logo img {
+    height: 10px;
+    cursor: pointer;
+  }
+
+  .related-nav {
+    display: flex;
+    margin-left: 31em;
+    margin-top: 10px;
+  }
+
+  .related-nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+
+  .related-nav a:hover {
+    text-decoration: underline;
+  }
+
+  
+  .social-icons a:hover {
+    transform: scale(1.2); /* Increase the size on hover */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+
+      
     @media screen and (max-width: 768px) {
       .navbar {
         flex-wrap: wrap;
@@ -436,7 +500,7 @@ body.sidebar-open {
   right: 45px;
   margin: 10px;
   font-size: 24px;
-  margin-top: 50px;
+  margin-top: 7.5em;
   color: #000;
   cursor: pointer;
   text-decoration: none;
@@ -494,6 +558,29 @@ body.sidebar-open {
 
 .product-container {
   text-align: center;
+}
+
+.product-container button {
+  display: inline-block;
+  padding: 5px 20px;
+  margin-bottom: 30px;
+  position: relative;
+  font-size: 14px;
+  background-color: transparent;
+  color: #000;
+  text-decoration: none;
+  border-radius: 15px;
+  border-style: solid;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+.product-container i{
+  width: 10px;
+  height: 100px;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .product-container img {
@@ -720,8 +807,6 @@ body.sidebar-open {
       border-radius: 5px;
       outline: none;
     }
-    
-
 
 .subscribe-form {
     display: flex;
@@ -807,7 +892,7 @@ footer {
       transition: color 0.3s ease;
     }
     
-    footer .social-links a i:hover {
+    footer .social-links a:hover {
       color: #5a5a5a;
     }
     
@@ -822,15 +907,6 @@ footer {
     .social-links a i {
       margin-right: 5px;
     }
-    
-    .social-links a:hover {
-      color: #5a5a5a;
-    }
-    
-    footer .social-links a i:hover {
-      color: #5a5a5a;
-    }
-    
 
     .footer-bottom {
       margin-top: 30px;
@@ -863,57 +939,159 @@ footer {
       font-size: 16px;
     }
 
-    #help-button,
-    #accessibility-button {
-      position: fixed;
-      bottom: 20px;
-      background-color: #000; /* You can change the background color */
-      color: #fff; /* You can change the icon color */
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 24px;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: background-color 0.3s ease; /* Smooth transition on hover */
-    }
+ 
+    #help-button-container {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 2;
 
-    #help-button {
-      right: 80px; /* Adjust the right value to position the button */
-    }
+        }
 
-    #accessibility-button {
-      right: 20px;
-    }
+        #help-button {
+          background-color: #000;
+          color: #fff;
+          border: none;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          font-size: 24px;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: background-color 0.3s ease;
+        }
 
-    .button-text {
+        #help-button:hover {
+          background-color: #777;
+        }
+
+        .button-text {
+          display: none;
+          position: absolute;
+          top: -60px;
+          left: 50%;
+          transform: translateX(-50%);
+          padding: 8px 16px;
+          background-color: #007BFF;
+          color: #fff;
+          border-radius: 20px;
+          font-size: 14px;
+        }
+
+        #help-button.active .button-text {
+          display: block;
+        }
+
+/* Styling for the help form container */
+#help-form-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: calc(25% + 100px); /* Move the form 100px to the right */
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Hide content that overflows the container */
+  opacity: 0; /* Start with 0 opacity */
+  transition: max-height 0.3s ease, opacity 0.3s ease; /* Add a transition for max-height and opacity */
+}
+
+
+        #help-form-container.show {
+          max-height: 1000px; /* Set a sufficiently large max-height to show the form */
+          opacity: 1;
+        }
+
+        #help-form {
+          background-color: #fff;
+          border-radius: 10px;
+          padding: 20px;
+          max-width: 400px;
+          width: 90%;
+          text-align: center;
+          transition: opacity 0.3s ease-in-out;
+          opacity: 0;
+        }
+
+        /* Show the form with fade-in effect */
+        #help-form.show {
+          opacity: 1;
+        }
+
+        #help-form h2 {
+          font-size: 24px;
+          margin-bottom: 20px;
+          color: #000;
+        }
+
+        #help-form label {
+          display: block;
+          margin-bottom: 10px;
+          text-align: left;
+          margin-left: 20px;
+          color: #333;
+          font-weight: bold;
+        }
+
+        #help-form input[type="text"],
+        #help-form input[type="email"],
+        #help-form textarea {
+          width: 90%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: 16px;
+        }
+
+        #help-form textarea {
+          resize: vertical;
+          min-height: 100px;
+        }
+
+        #help-form button {
+          background-color: #000;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          cursor: pointer;
+          width: 100%;
+          border-radius: 5px;
+          margin-top: 20px;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+        }
+
+        #help-form button:hover {
+          background-color: #777;
+        }
+
+    /* Styling for the custom tooltip */
+    .tooltip-text {
       display: none;
       position: absolute;
-      top: -40%; /* Vertically center the text */
-      left: 50%; /* Horizontally center the text */
-      transform: translate(-50%, -50%); /* Center the text precisely */
-      padding: 8px 16px;
-      background-color: #000; /* Background color for the text */
-      color: #fff; /* Text color */
-      border-radius: 70px;
-      font-size: 9px;
-      white-space: nowrap; /* Prevent text wrapping */
+      background-color: #777;
+      color: #fff;
+      border-radius: 0px;
+      padding: 6px 12px;
+      font-size: 12px;
+      text-align: center;
+      white-space: nowrap;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      bottom: calc(100% + 5px);
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    #help-button:hover,
-    #accessibility-button:hover {
-      background-color: #868686ad; /* Adjust the opacity on hover */
-    }
-
-    #help-button:hover .help-button-text,
-    #accessibility-button:hover .accessibility-button-text {
+    #help-button:hover .tooltip-text {
       display: block;
-      animation: fadeIn 0.5s forwards; 
-      background-color: #777; 
-;
+      opacity: 1;
     }
 
     /* Define the fade-out animation */
@@ -925,21 +1103,240 @@ footer {
         opacity: 1;
       }
     }
+
+    .popup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .popup.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            background: #fff;
+            max-width: 400px;
+            width: 90%;
+            text-align: left;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            position: relative;
+            transform: scale(0.8);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            cursor: default;
+        }
+
+        .popup.active .popup-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .popup-content p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Styling for the close icon in the top-right corner */
+        #close-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #000;
+            z-index: 1000;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        #close-icon:hover {
+            transform: rotate(90deg);
+            color: #f00; /* Change color on hover */
+        }
+
+        /* Styling for the close button */
+        #continue-popup {
+            background-color: black;
+            color: #fff;
+            border-style: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        #continue-popup:hover {
+            background-color: #777;
+        }
+
+        /* Styling for the flag icon */
+        #flag-icon {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        #country-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Styling for additional content */
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        
+    /* Container Styles */
+    .sustainability {
+      padding: 30px;
+      text-align: left;
+      border: #ddd solid 2px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 1300px;
+      min-height: 600px;
+      margin: 0 auto;
+      margin-top: 100px;
+    }
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+    }
+
+    /* Section Styles */
+    .heading-section {
+      text-align: left;
+      margin-bottom: 40px;
+    }
+
+    .heading-section h2 {
+      color: #333;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .heading-section h5 {
+      color: #555;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .heading-section p {
+      color: #666;
+      font-size: 18px;
+      padding: 10px 0;
+    }
+
+   /* Creative Container Styles */
+.container-1 {
+  padding: 30px; /* Adjust padding as needed */
+  text-align: left;
+  border: #ddd solid 2px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1450px;
+  min-height: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+  /* Sustainability Section Styles */
+.sustainability-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.sustainability-point {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column; /* Add this line to make the items stack vertically */
+}
+
+.number-square {
+  width: 30px;
+  height: 30px;
+  background-color: #777;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px; /* Add this line to provide space between the number and the heading */
+}
+
+.sustainability-point h3 {
+  margin-left: 40px; 
+  position: relative;
+  top: -30px;
+}
+
+/* Responsive Layout for screens 768px and below */
+@media (max-width: 768px) {
+  .container-1 {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .sustainability-section {
+    grid-template-columns: 1fr; /* Display sustainability points in a single column on smaller screens */
+  }
+
+  .number-square {
+    margin-bottom: 10px; /* Add space between the number and the heading on smaller screens */
+  }
+
+  .sustainability-point h3 {
+    margin-left: 0; /* Center the heading on smaller screens */
+    text-align: center;
+    margin-top: -15px; /* Add space between the number and the heading on smaller screens */
+    margin-left: 40px;
+  }
+}
   </style>
 </head>
 <body>
   <header>
     <section class="sales-info">
         <p>FREE BW SHIPPING OVER BWP500!</p>
-        <img src="logo.png" alt="">
+        <img src="logo1.png" alt="">
     </section>
-</header>
+</header> 
 <div id="overlay" onclick="closeNav()"></div>
   <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="logo">
-      <img src="logo.png" alt="Logo">
-    </div>
     <div class="user-welcome">
       <p>Welcome,<a href="#">Paul</a></p>
     </div>
@@ -950,8 +1347,8 @@ footer {
     <a href="#">About</a>  
     <a href="#">Support</a>
     <a href="#">Log out</a>
-
-    <div class="location">
+    
+    <div class="location" style="margin-top: 50px;">
       <select id="shippingLocation">
         <option value="" disabled selected>Shipping to :</option>
         <option value="bw">Botswana</option>
@@ -959,31 +1356,41 @@ footer {
         <option value="global">Global</option>
       </select>
     </div>
-
-    <div class="social-icons">
+    
+    <div class="social-icons" style="margin-top: 70px;">
       <a href="#" class="navbar-icon"><i class="fab fa-facebook-f"></i></a>
       <a href="#" class="navbar-icon"><i class="fab fa-twitter"></i></a>
       <a href="#" class="navbar-icon"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
-</div>
 
+</div>
+    
 <span class="nav-toggle" onclick="openNav()"><i class="fas fa-bars"></i></span>
-
 <nav class="navbar">
-<div class="navbar-left">
-  <span class="nav-toggle" onclick="openNav()">&#9776;</span>
-  <a class="search-icon" href="#"><i class="fas fa-search"></i></a>
-    <input type="text" id="searchBar" placeholder="What are you looking for?" class="search-bar">
-</div>
-<div class="navbar-right">
-  <a href="#" class="navbar-icon"><i class="far fa-user"></i></a>
-  <a href="#" class="navbar-icon"><i class="fa-solid fa-cart-shopping"></i></a>
-  <a href="#" class="navbar-icon"><i class="fa-regular fa-bell"></i></a>
-  <a href="#" class="navbar-icon"><i class="far fa-heart"></i></a>
-  <a href="#" class="navbar-icon">EN</a>
-</div>
+  <div class="navbar-left">
+    <span class="nav-toggle" onclick="openNav()">&#9776;</span>
+    <a class="search-icon" href="#"><i class="fas fa-search"></i></a>
+      <input type="text" id="searchBar" placeholder="What are you looking for?" class="search-bar">
+  </div>
+  <div class="navbar-right">
+    <a href="#" class="navbar-icon"><i class="far fa-user"></i></a>
+    <a href="#" class="navbar-icon"><i class="fa-solid fa-cart-shopping"></i></a>
+    <a href="#" class="navbar-icon"><i class="fa-regular fa-bell"></i></a>
+    <a href="#" class="navbar-icon"><i class="far fa-heart"></i></a>
+    <a href="#" class="navbar-icon">EN</a>
+  </div>
 </nav>
+
+<div class="related-nav">
+  <a href="#">Shop All</a>
+  <a href="#">Latest</a>
+  <a href="#">Best Sellers</a>
+  <a href="#">Sale</a>
+  <a href="#">FAQs</a>
+  <a href="#">Reviews</a>
+  <a href="#">Support</a>
+</div>
   
 <section class="hero">
   <img src="image7.jpg" alt="">
@@ -992,7 +1399,7 @@ footer {
       <h1>Plastic Furniture Sale: 30% Off!</h1>
       <a href="#" class="btn">Shop furniture</a>
     </div>
-  </div>
+  </div>.
   <div class="carousel-arrow left" onclick="scrollCarousel(-1)">&#8249;</div>
   <div class="carousel-arrow right" onclick="scrollCarousel(1)">&#8250;</div>
 </section>
@@ -1005,16 +1412,22 @@ footer {
         <img src="product1.jpg" alt="">
         <h4>Natural Wood Leg Plastic Dining Chair</h4>
         <p>BWP 249.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product2.jpg" alt="">
         <h4>Sleek Shine 3 Drawer Night Stand</h4>
         <p>BWP 399.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product3.jpg" alt="">
         <h4>Wood Legged Lucky Chair</h4>
         <p>BWP 249.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -1056,16 +1469,22 @@ footer {
         <img src="product1.jpg" alt="">
         <h4>Natural Wood Leg Plastic Dining Chair</h4>
         <p>BWP 249.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product2.jpg" alt="">
         <h4>Sleek Shine 3 Drawer Night Stand</h4>
         <p>BWP 399.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product3.jpg" alt="">
         <h4>Wood Legged Lucky Chair</h4>
         <p>BWP 249.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -1086,16 +1505,22 @@ footer {
         <img src="product4.jpg" alt="">
         <h4>Tulsi Aswagandha Tea</h4>
         <p>BWP 149.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product5.jpg" alt="">
         <h4>Tulsi Ginger 100g Tin</h4>
         <p>BWP 249.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product6.jpg" alt="">
         <h4>Organic Golden Milk Super Blend</h4>
         <p>BWP 99.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -1116,16 +1541,22 @@ footer {
         <img src="product7.jpg" alt="">
         <h4>BIC 24 Coloring Pencils</h4>
         <p>BWP 49.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product8.jpg" alt="">
         <h4>Faber-Castell 15 Colour EcoPencils</h4>
         <p>BWP 76.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product9.jpg" alt="">
         <h4>Wooden Desktop Stationery Organizer</h4>
         <p>BWP 199.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -1146,16 +1577,22 @@ footer {
         <img src="product10.jpg" alt="">
         <h4>Twin and Earth Flat Cable 100m</h4>
         <p>BWP 699.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product11.jpg" alt="">
         <h4>Ryobi - 1kg Mig Wire D100 - 1.0mm</h4>
         <p>BWP 119.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product12.jpg" alt="">
         <h4>Charge Cable for Type C Devices</h4>
         <p>BWP 74.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -1176,16 +1613,22 @@ footer {
         <img src="product13.jpg" alt="">
         <h4>Housekeeping Uniform - Sky & White</h4>
         <p>BWP 349.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product14.jpg" alt="">
         <h4>Javlin - Chef Trouser - Black</h4>
         <p>BWP 229.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product15.jpg" alt="">
         <h4>Barron Budget Poly Cotton Conti Suit</h4>
         <p>BWP 359.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="chevrons">
         <div class="chevron-circle">
@@ -1206,18 +1649,25 @@ footer {
         <img src="product16.jpg" alt="">
         <h4>Stainless Steel Chainmail Scrubber</h4>
         <p>BWP 199.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product17.jpg" alt="">
         <h4>Steel Baton - Large</h4>
         <p>BWP 125.95</p>
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
       </div>
       <div class="product-container">
         <img src="product18.jpg" alt="">
         <h4>Steel Side Table</h4>
         <p>BWP 249.95</p>
-      </div>
-      <div class="chevrons">
+        <button>Add to Cart</button>
+        <i class="far fa-heart"></i>
+      </div> 
+    </div>
+    <div class="chevrons">
         <div class="chevron-circle">
           <i class="fas fa-chevron-left"></i>
         </div>
@@ -1225,14 +1675,46 @@ footer {
           <i class="fas fa-chevron-right"></i>
         </div>
       </div> 
-    </div>
   </section>
+
+   <!-- Container Section 1 -->
+   <div class="sustainability container-1">
+    <div class="heading-section">
+      <h2>Shop Sustainably with Pushing Product</h2>
+      <h5 style="font-size: 12px;">#ShopSustainably</h5>
+      <p>Immerse yourself in a world of vibrant colors and bold strokes. Our artists breathe life into every canvas, creating masterpieces that speak to the soul.</p>
+    </div>
+
+    <!-- Sustainability Section -->
+    <div class="sustainability-section">
+      <div class="sustainability-point">
+        <div class="number-square">1</div>
+        <h3>Materials</h3>
+        <p>Commitment to eco-friendly materials ensures that every product not only meets high-quality standards but also contributes to a healthier planet. Our careful selection of sustainable materials reflects our dedication to preserving the environment and promoting ethical practices in the industry.</p>
+      </div>
+      <div class="sustainability-point">
+        <div class="number-square">2</div>
+        <h3>Environment</h3>
+        <p>Reducing our carbon footprint is at the core of our production process. We implement eco-conscious methods to minimize environmental impact. From energy-efficient facilities to responsible waste management, we strive to create a positive change and foster a greener, more sustainable future for generations to come.</p>
+      </div>
+      <div class="sustainability-point">
+        <div class="number-square">3</div>
+        <h3>Community</h3>
+        <p>Our commitment extends beyond products to community engagement in sustainable initiatives. We actively participate in local projects, support environmental awareness campaigns, and collaborate with organizations striving for positive change. Together, we can build a stronger, more sustainable community.</p>
+      </div>
+      <div class="sustainability-point">
+        <div class="number-square">4</div>
+        <h3>Innovation</h3>
+        <p>Continuous innovation is our driving force for environmental conservation. We invest in research and development to discover and implement cutting-edge sustainable practices. By staying at the forefront of eco-friendly technologies, we aim to set new standards and inspire others to join the journey towards a sustainable future.</p>
+      </div>
+    </div>
+  </div>
 
   <section class="discount-offer">
     <div class="offer-container">
       <div class="offer-content">
         <h2>Get 15% Off!</h2>
-        <p class="offer-text">Psst! We've got a special treat for all our valued customers. Sign up for our exclusive newsletter and unlock a great 15% discount on your very first purchase! </p>
+        <p class="offer-text">Psst <span style='font-size:20px;'>&#129323;</span>! We've got a special treat for all our valued customers. Sign up for our exclusive newsletter and unlock a great 15% discount on your very first purchase! </p>
         <form class="subscribe-form" action="#" method="POST">
           <input type="email" name="email" placeholder="Enter your email" required>
           <button type="submit">Subscribe Now</button>
@@ -1290,8 +1772,167 @@ footer {
   
   <span class="nav-toggle" onclick="openNav()"><i class="fas fa-bars"></i></span>
 
+    <!-- The pop-up container -->
+    <div id="location-popup" class="popup">
+      <div class="popup-content">
+          <!-- Close icon in the top-right corner -->
+          <span id="close-icon" class="close-button"><i class="fas fa-times"></i></span>
+          <h3>Your location is set to</h3>
+          <img id="flag-icon" src="" alt="Flag">
+          <p id="country-name">Detecting...</p>
+          <div class="info">
+              <div class="info-item">Currency: <span id="currency">Detecting...</span></div>
+              <div class="info-item">Shipping options: <span id="shipping-options">Detecting...</span></div>
+          </div>
+          <button id="continue-popup" class="continue-button">Continue</button>
+      </div>
+  </div>
 
+<!-- Help Button -->
+<div id="help-button-container">
+  <button id="help-button" aria-label="Help">
+    <i class="fas fa-question"></i> <!-- Using Font Awesome question mark icon -->
+    <span class="tooltip-text">Help</span> <!-- Custom tooltip text -->
+  </button>
+</div>
+
+<!-- Help Form Container -->
+<div id="help-form-container">
+  <form id="help-form">
+    <h2>Contact Us</h2>
+    
+    <!-- Group related fields within a fieldset -->
+    <fieldset>
+      <legend>Your Information</legend>
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" placeholder="Name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" placeholder="email@example.com" required>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Your Message</legend>
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="How can we assist you?" required></textarea>
+      </div>
+    </fieldset>
+
+    <!-- Display validation errors here -->
+    <div id="validation-errors" class="error-messages"></div>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+  
   <script>
+ // Get the help button, help form container, and close button
+ var helpButton = document.getElementById("help-button");
+  var helpFormContainer = document.getElementById("help-form-container");
+  var helpForm = document.getElementById("help-form");
+
+// Function to toggle the help form and change the button icon
+function toggleHelpForm() {
+  // Toggle active class to change the button's appearance
+  helpButton.classList.toggle("active");
+
+  // Toggle the close icon and question mark icon
+  var icon = helpButton.querySelector("i");
+  if (icon.classList.contains("fa-question")) {
+    icon.classList.remove("fa-question");
+    icon.classList.add("fa-times");
+  } else {
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-question");
+  }
+
+  // Toggle the form's visibility with fade-in/fade-out effect
+  if (helpFormContainer.style.display === "flex") {
+    // Hide the form with fade-out effect
+    helpFormContainer.style.opacity = 0;
+    setTimeout(function () {
+      helpFormContainer.style.display = "none";
+    }, 300); // Delay for the same duration as the opacity transition
+  } else {
+    // Show the form with fade-in effect
+    helpFormContainer.style.display = "flex";
+    setTimeout(function () {
+      helpFormContainer.style.opacity = 1;
+      helpForm.classList.add("show");
+    }, 10); // Delay for smoother animation
+  }
+}
+
+  // Add click event listener to the help button to toggle the form
+  helpButton.addEventListener("click", toggleHelpForm);
+
+  // Close the help form when clicking outside of it
+  window.addEventListener("click", function (event) {
+    if (event.target === helpFormContainer) {
+      toggleHelpForm();
+    }
+  });
+
+  // Prevent the form from closing when clicking inside it
+  helpForm.addEventListener("click", function (event) {
+    event.stopPropagation();
+  });
+
+  // Function to toggle the help form and change the button icon and tooltip text
+function toggleHelpForm() {
+  // Toggle active class to change the button's appearance
+  helpButton.classList.toggle("active");
+
+  // Toggle the close icon and question mark icon
+  var icon = helpButton.querySelector("i");
+  if (icon.classList.contains("fa-question")) {
+    icon.classList.remove("fa-question");
+    icon.classList.add("fa-times");
+    helpButton.querySelector(".tooltip-text").textContent = "Close"; // Change tooltip text to "Close"
+  } else {
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-question");
+    helpButton.querySelector(".tooltip-text").textContent = "Help"; // Change tooltip text to "Help"
+  }
+
+  // Toggle the form's visibility with fade-in/fade-out effect
+  if (helpFormContainer.style.display === "flex") {
+    // Hide the form with fade-out effect
+    helpFormContainer.style.opacity = 0;
+    setTimeout(function () {
+      helpFormContainer.style.display = "none";
+    }, 300); // Delay for the same duration as the opacity transition
+  } else {
+    // Show the form with fade-in effect
+    helpFormContainer.style.display = "flex";
+    setTimeout(function () {
+      helpFormContainer.style.opacity = 1;
+      helpForm.classList.add("show");
+    }, 10); // Delay for smoother animation
+  }
+}
+
+// Add click event listener to the help button to toggle the form
+helpButton.addEventListener("click", toggleHelpForm);
+
+// Close the help form when clicking outside of it
+window.addEventListener("click", function (event) {
+  if (event.target === helpFormContainer) {
+    toggleHelpForm();
+  }
+});
+
+// Prevent the form from closing when clicking inside it
+helpForm.addEventListener("click", function (event) {
+  event.stopPropagation();
+});
+
+
     //Sidebar Navigation
   function openNav() {
     document.getElementById("mySidenav").style.left = "0";
@@ -1325,17 +1966,136 @@ const searchIcon = document.querySelector(".search-icon");
         searchBar.focus();
       }
     });
+
+    //Pop-up
+    document.addEventListener("DOMContentLoaded", function () {
+            // Get the location-popup and user-location elements
+            var popup = document.getElementById("location-popup");
+    
+            // Function to display the popup
+            function showPopup() {
+                popup.classList.add("active");
+            }
+    
+            // Function to close the popup
+            function closePopup() {
+                popup.classList.remove("active");
+            }
+    
+            // Function to handle country detection
+            function detectCountry() {
+                // Detect user's location using Geolocation API
+                if ("geolocation" in navigator) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        // Get latitude and longitude
+                        var latitude = position.coords.latitude;
+                        var longitude = position.coords.longitude;
+    
+                        // Perform reverse geocoding using OpenCage Geocoder API
+                        var apiKey = "d8b424ccf84d4030b77d1359d8cc38e0"; // Replace with your API key
+                        var apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+    
+                        fetch(apiUrl)
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.results && data.results.length > 0) {
+                                    var countryCode = data.results[0].components.country_code.toUpperCase();
+                                    showPopup();
+                                    selectCountry(countryCode);
+                                } else {
+                                    console.error("Unable to fetch location data.");
+                                }
+                            })
+                            .catch(error => {
+                                console.error("Error fetching location data:", error);
+                            });
+                    }, function (error) {
+                        console.error("Error getting location:", error);
+                    });
+                } else {
+                    console.error("Geolocation is not available in this browser.");
+                }
+            }
+    
+            // Function to select country and update information
+            function selectCountry(countryCode) {
+                // Update the detected country and flag
+                var countryName = countryCodeToName(countryCode);
+                var flagIcon = document.getElementById("flag-icon");
+                var countryText = document.getElementById("country-name");
+    
+                // Check if a flag exists for the selected country code
+                if (flagMapping.hasOwnProperty(countryCode)) {
+                    var flagFileName = flagMapping[countryCode];
+                    flagIcon.src = flagFileName; 
+                    flagIcon.alt = countryName + " Flag";
+                }
+    
+                countryText.textContent = countryName;
+    
+                // Update currency and shipping information
+                var currencyElement = document.getElementById("currency");
+                var shippingOptionsElement = document.getElementById("shipping-options");
+    
+                if (countryInfoMapping.hasOwnProperty(countryCode)) {
+                    var countryInfo = countryInfoMapping[countryCode];
+                    currencyElement.textContent = countryInfo.currency;
+                    shippingOptionsElement.textContent = countryInfo.shipping;
+                } else {
+                    currencyElement.textContent = "Not available";
+                    shippingOptionsElement.textContent = "Not available";
+                }
+            }
+    
+            // Function to convert country code to name
+            function countryCodeToName(countryCode) {
+                // Replace with your mapping logic or use a library
+                switch (countryCode) {
+                    case "US": return "United States";
+                    case "CA": return "Canada";
+                    case "BW": return "Botswana";
+                    case "ZAR": return "South Africa";
+                    case "IN": return "India";
+                    // Add more countries here
+                    default: return "Unknown";
+                }
+            }
+    
+            // Flag icon mapping
+            var flagMapping = {
+                "US": "usa.png",
+                "CA": "ca.png",
+                "BW": "bw.png",
+                "ZAR": "zar.png",
+                "IN": "in.png",
+                // Add more countries here
+            };
+    
+            // Country information mapping
+            var countryInfoMapping = {
+                "US": { currency: "USD", shipping: "Free shipping for orders over $50" },
+                "CA": { currency: "CAD", shipping: "Free shipping for orders over $60" },
+                "BW": { currency: "BWP", shipping: "Standard shipping available" },
+                "ZAR": { currency: "ZAR", shipping: "Free shipping for orders over ZAR 500" },
+                "IN": { currency: "INR", shipping: "Shipping charges apply" },
+                // Add more countries here
+            };
+    
+            // Automatically detect and display the country
+            detectCountry();
+    
+            // Close the popup when the close button is clicked
+            var closeButton = document.getElementById("close-icon");
+            closeButton.addEventListener("click", closePopup);
+    
+            // Close the popup when the "Continue" button is clicked
+            var continueButton = document.getElementById("continue-popup");
+            continueButton.addEventListener("click", closePopup);
+        });
   </script>
 </body>
 <footer>
-  <button id="help-button" aria-label="Help">
-    <span class="button-text help-button-text">Help</span>
-    <i class="material-icons">contact_support</i>
-  </button>
-  <button id="accessibility-button" aria-label="Accessibility">
-    <span class="button-text accessibility-button-text">Accessibility</span>
-    <i class="material-icons">accessibility</i>
-  </button>
+
   <div class="container">
     <div class="footer-col">
       <h4>About Us</h4>
@@ -1359,7 +2119,7 @@ const searchIcon = document.querySelector(".search-icon");
       <h4>Connect with Us</h4>
       <div class="social-links">
         <a href="#"><i class="fab fa-facebook-f"></i>Facebook</a>
-        <a href="#"><i class="fab fa-twitter"></i>Twitter</a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i>Twitter</a>
         <a href="#"><i class="fab fa-instagram"></i>Instagram</a>
         <a href="#"><i class="fa-solid fa-at"></i>Email</a>
       </div>
